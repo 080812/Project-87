@@ -39,18 +39,18 @@ window.addEventListener("keydown",my_keydown);
 
 function my_keydown(e){
     keyPressed=e.keyCode;
-    if(e.shiftKey == true && keyPressed =='80');
+    if(keyPressed =='80' && e.shiftKey == true)
     {
-        block_image_width = block_image_width+10;
-        block_image_height = block_image_height+10;
-        document.getElementById("Current_Width").innerHTML=block_image_width;
-        document.getElementById("Current_Height").innerHTML=block_image_height;
+        block_image_width = block_image_width+10
+        block_image_height = block_image_height+10
+        document.getElementById("Current_Width").innerHTML=block_image_width
+        document.getElementById("Current_Height").innerHTML=block_image_height
 
     }
 
-    if(e.shiftKey == true && keyPressed =='77');
+    if(keyPressed =='77' && e.shiftKey == true )
     {
-        block_image_width = block_image_width-10;
+        block_image_width = block_image_width-10;   
         block_image_height = block_image_height-10;
         document.getElementById("Current_Width").innerHTML=block_image_width;
         document.getElementById("Current_Height").innerHTML=block_image_height;
@@ -137,25 +137,25 @@ function my_keydown(e){
 
     if(keyPressed =='78'){
         new_image('ironman_left_hand.png');
-        console.log("o");
-        
-    }
-
-    if(keyPressed =='77'){
-        new_image('ironman_legs.png');
         console.log("n");
         
     }
 
-    if(keyPressed =='80'){
-        new_image('ironman_right_hand.png');
-        console.log("m");
+    if(keyPressed =='66'){
+        new_image('ironman_legs.png');
+        console.log("b");
         
     }
 
-    if(keyPressed =='83'){
+    if(keyPressed =='79'){
+        new_image('ironman_right_hand.png');
+        console.log("o");
+        
+    }
+
+    if(keyPressed =='90'){
         new_image('player.png');
-        console.log("p");
+        console.log("z");
         
     }
 
@@ -210,3 +210,34 @@ function my_keydown(e){
    
 }
 
+function up(){
+    if(player_y>=0){
+        player_y=player_y-block_image_height;
+        canvas.remove(player_object);
+        player_update();
+    }
+}
+
+function down(){
+    if(player_y<=500){
+        player_y=player_y+block_image_height;
+        canvas.remove(player_object);
+        player_update();
+    }
+}
+
+function left(){
+    if(player_x>0){
+        player_x=player_x-block_image_width;
+        canvas.remove(player_object);
+        player_update();
+    }
+}
+
+function right(){
+    if(player_x<=700){
+        player_x=player_x+block_image_width;
+        canvas.remove(player_object);
+        player_update();
+    }
+}
